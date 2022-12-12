@@ -128,7 +128,9 @@ button{
 
 .back{
     content: "";
-    background-color: green;
+    background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnAKic1BxmVw4t3jFdF9MrqLWSpHL3T5Sx5g&usqp=CAU");
+    background-position: center;
+    background-size: cover;
 }
 
 .container{
