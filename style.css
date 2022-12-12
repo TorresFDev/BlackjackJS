@@ -73,17 +73,15 @@ input#wager{
 }
 
 body{
-    background: transparent url("./pictures/pokertable.jpg");
+    background: transparent url("./pictures/pokertable.jpg") no-repeat;
+    position: relative;
     background-position: center;
     background-size: cover;
     height: 100vh;
     width: 100%;
-    position: relative;
+    
 }
 
-h1, h2, h3, h4, h5, h6, p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
 button{
     height: 50px;
@@ -97,7 +95,20 @@ button{
 }
 
 .layout{
+    position: absolute;
+    top:25%;
+    left: 46%;
     text-align: center;
+    padding: 1rem;
+    
+}
+
+.cartasJugador{
+    position: absolute;
+    bottom:32%;
+    left: 46%;
+    text-align: center;
+    padding: 1rem;
 }
 
 .wrapper{
@@ -111,12 +122,12 @@ button{
 }
 
 .card{
-    height: 150px;
-    width: 150px;
+    height: 80px;
+    width: 50px;
     border: 2px solid black;
-    padding-top: 60px;
+    padding-top: 20px;
     border-radius: 10px;
-    font-size: 3rem;
+    font-size: 1.6rem;
     text-align: center;
     box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);
 }
@@ -134,7 +145,12 @@ button{
 }
 
 .container{
-    margin: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    text-align: center;
+    padding: 1rem;
+
 }
 
 .background{
