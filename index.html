@@ -9,16 +9,44 @@
     <title>BlackJack</title>
 </head>
 <body>
-    <div id ="wrapper">
-        <div id="game">
-
-            <div id="actions">
-                <button id="hit" class="btn" disabled>Hit</button>
-                <button id="deal" class="btn btn-primary" >pass</button>
+    
+    <div class="layout">
+        <h2>mano croupier</h2>
+        <div class="wrapper">
+            <div class="cards" id="croupier">
             </div>
-        
+        </div>
+        <h2>mano jugador</h2>
+        <div class="wrapper">
+            <div class="cards" id="jugador">
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="container" id="button-container">
+                <button id="hit">Hit</button>
+                <button id="pass">Pass</button>
+            </div>
+        </div>
+        <div class="background" id="notice">
+        <div class="notice">
+            <p></p>
+            <button id="next-hand">Deal Next Hand</button>
+        </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -26,3 +54,13 @@
     <script  src="./index.js"></script>
 </body>
 </html>
+<div id ="wrapper">
+    <div id="game">
+
+        <div id="actions">
+            <button id="hit" class="btn" disabled>Hit</button>
+            <button id="deal" class="btn btn-primary" >pass</button>
+        </div>
+    
+    </div>
+</div>

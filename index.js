@@ -10,8 +10,6 @@ const cartaModelo = document.createElement('div');
 cartaModelo.classList.add('card');
 
 
-// const croupier = document.getElementById("croupier");
-// const jugador = document.getElementById("jugador");
 // const hit = document.getElementById("hit");
 // const pass = document.getElementById("pass");
 // const buttonContainer = document.getElementById("button-container");
@@ -48,7 +46,27 @@ const seleccionarCarta = () => {
     return cualquierCarta;
 }
 
+const croupier = document.getElementById("croupier");
+const jugador = document.getElementById("jugador");
+
+const manoBot =() => {
+    const manoCroupier = [seleccionarCarta(),seleccionarCarta()];
+    manoCroupier.forEach((carta)=>{
+        const nuevaCarta = cartaModelo.cloneNode(true);
+        nuevaCarta.innerHTML=carta;
+        (carta[carta.length - 1] === '♥' || carta[carta.length - 1] === '♦') && nuevaCarta.setAttribute('data-red', true)
+        croupier.append(nuevaCarta);
+    })
+    
+    const manoJugador = [seleccionarCarta(),seleccionarCarta()];
+    manoJugador.forEach((carta)=>{
+        const nuevaCarta = cartaModelo.cloneNode(true);
+        nuevaCarta.innerHTML=carta;
+        (carta[carta.length - 1] === '♥' || carta[carta.length - 1] === '♦') && nuevaCarta.setAttribute('data-red', true)
+        jugador.append(nuevaCarta);
+    })
+}
+
+
 mezclarMazo(5); 
-const cualquierCarta= seleccionarCarta();
-console.log(totalMazos)
-console.log(cualquierCarta);
+manoBot()
