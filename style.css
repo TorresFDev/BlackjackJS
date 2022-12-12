@@ -1,71 +1,4 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body{
-    background: rgb(2, 48, 2);
-}
-
-#wrapper{
-    margin: 0 auto;
-}
-
-#game{
-    background: transparent url("./pictures/pokertable.jpg");
-    border-radius: 5px;
-    color: #333;
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
-    position: relative;
-}
-
-#actions{
-    position: absolute;
-    bottom:0;
-    left: 5%;
-    text-align: center;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background-color: black;
-
-}
-
-input#wager{
-    margin-left: 5px;
-    position: relative;
-    top: 4px;
-}
-
-#money, #money:before{
-    border-radius: 5px;
-    height: 55px;
-    position: absolute;
-    right:0;
-    bottom:0;
-    width: 250px;
-    padding: 7px;
-    }
-
-#money{
-    border: 2px solid rgb(89, 48, 187);
-}
-
-#money:before{
-    background: #333;
-    content:'';
-    opacity: 0.8;
-    ;
-}
-
-#cash, #bank{
-    color: white;
-    z-index: 1;
-    position: relative;
-} */
 *{
     margin: 0;
     padding: 0;
@@ -122,12 +55,12 @@ button{
 }
 
 .card{
-    height: 80px;
-    width: 50px;
+    height: 96px;
+    width: 60px;
     border: 2px solid black;
     padding-top: 20px;
     border-radius: 10px;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     text-align: center;
     box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);
 }
@@ -147,10 +80,14 @@ button{
 .container{
     position: absolute;
     bottom: 0;
-    left: 15%;
+    left: 16%;
     text-align: center;
     padding: 1rem;
 
+}
+
+.button{
+    background-color: rgb(252, 138, 9);
 }
 
 .background{
