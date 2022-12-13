@@ -7,12 +7,7 @@ let manoCroupier = [];
 let manoJugador = [];
 
 
-
-// const buttonContainer = document.getElementById("button-container");
-// const notice = document.getElementById("notice");
-// const siguienteMano = document.getElementById("siguiente-mano");
-
-
+//creacion del mazo
 const crearMazo = () => {
     const mazo = [];
     palos.forEach((palo) => {
@@ -24,16 +19,19 @@ const crearMazo = () => {
     return mazo;
 }
 
+
+//funcion para mezclar el mazo
 const mezclarMazo = (num) => {
     for (let i = 0; i < num; i++) {
         const nuevoMazo = crearMazo();
         totalMazos = [...totalMazos, ...nuevoMazo.sort(() => Math.random() - 0.5)];
-        //console.log(nuevoMazo)
+        console.log(nuevoMazo)
     }
 }
+mezclarMazo(5); 
 
 
-
+//seleccionar carta
 const seleccionarCarta = () => {
     const cartasTotales = totalMazos.length;
     let cualquierNumero = Math.floor(Math.random() * cartasTotales);
@@ -47,8 +45,10 @@ cartaModelo.classList.add('card');
 const croupier = document.getElementById("croupier");
 const jugador = document.getElementById("jugador");
 
+//cartas del jugador y del croupier con color rojo
 const manoBot =() => {
     manoCroupier = [seleccionarCarta(),seleccionarCarta()];
+    console.log('Mano Croupier',manoCroupier)
     manoCroupier.forEach((carta,index)=>{
         const nuevaCarta = cartaModelo.cloneNode(true);
         index === 0? nuevaCarta.classList.add('back'):nuevaCarta.innerHTML=carta;
@@ -56,7 +56,8 @@ const manoBot =() => {
         croupier.append(nuevaCarta);
     })
     
-    manoJugador = [seleccionarCarta(),seleccionarCarta()];
+    manoJugador = [seleccionarCarta(),seleccionarCarta()]
+    console.log ("Mano jugador",manoJugador)
     manoJugador.forEach((carta)=>{
         const nuevaCarta = cartaModelo.cloneNode(true);
         nuevaCarta.innerHTML=carta;
@@ -66,9 +67,10 @@ const manoBot =() => {
 }
 
 const botonDame = document.getElementById("otra");
-const pass = document.getElementById("pass");
+const botonPasar = document.getElementById("pasar");
 
-const pedirCartas = () => {
+//El Jugador pide cartas.
+const pedirCartasJugador = () => {
     const nuevaCarta = seleccionarCarta();
     manoJugador.push(nuevaCarta);
     const pedirOtraCarta=cartaModelo.cloneNode(true);
@@ -81,21 +83,67 @@ const pedirCartas = () => {
     }
 }
 
-botonDame.addEventListener('click', pedirCartas)
-
-const calcularValor = (mano) =>{
-    let valor = 0;
-    mano.forEach((carta)=>{
-        if (carta.length === 2){
-            (carta[0] === 'J'|| carta[0] === 'Q'|| carta[0] === 'K')? valor +=10: valor+= Number(carta[0])
-        }else{
-            valor +=10
-        }
-    })
-    return valor;
+//Decidir al Ganador
+const decidirGanador = async () =>{
+    let croupierValor = await calcularValor(manoCroupier)
+    let jugadorValor = await calcularValor(manoJugador)
+    alert(`La casa tiene ${croupierValor}, Jugador tiene ${jugadorValor}`)
+    croupierValor > jugadorValor? alert('La casa gana!'):  alert('El jugador gana')
 }
 
+//dar vuelta la carta oculta
+//calcular valor mano croupier con la de jugador
+const cartasCroupier = async()=>{
+    const cartaOculta = croupier.children[0];
+    cartaOculta.classList.remove("back");
+    cartaOculta.innerHTML = manoCroupier[0];
+    let valorMano = await calcularValor(manoCroupier);
+    if(valorMano < 16){
+        let nuevaCarta = seleccionarCarta();
+        manoCroupier.push(nuevaCarta);
+        const nuevaCartaNodo= cartaModelo.cloneNode(true);
+        nuevaCartaNodo.innerHTML= nuevaCarta;
+        croupier.append(nuevaCartaNodo);
+        valorMano = await calcularValor(manoCroupier);
+    }
+    if (valorMano < 16){
+        cartasCroupier();
+    }
+    else if (valorMano === 21){
+        alert('La casa gana con 21!!')
+    }
+    else if(valorMano > 21){
+        alert(`La casa pierde con`)
+    }
+    else{
+        decidirGanador();
+    }
+}
 
+botonDame.addEventListener('click', pedirCartasJugador)
+botonPasar.addEventListener('click', cartasCroupier)
 
-mezclarMazo(5); 
+//calcular y asignar  el valor de las cartas 
+const calcularValor = (mano) =>{
+    let valor = 0;
+    let Ace = 0;
+    mano.forEach((carta)=>{
+        if (carta.length === 2){
+            if (carta[0] === 'A'){
+                Ace += 1}
+                
+                else{(carta[0] === 'J'|| carta[0] === 'Q'|| carta[0] === 'K')? valor +=10: valor+= Number(carta[0])}
+        }
+        else{
+            valor +=10}
+        })
+        
+        if (Ace > 0 ){
+            valor + 11 > 21? valor +=1: valor+= 11;
+            valor += (Ace-1)*1
+        }
+        return valor;
+}
+    
 manoBot()
+
