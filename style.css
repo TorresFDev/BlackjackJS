@@ -30,7 +30,7 @@ button{
 .layout{
     position: absolute;
     top:25%;
-    left: 46%;
+    left: 44%;
     text-align: center;
     padding: 1rem;
     
@@ -39,7 +39,7 @@ button{
 .cartasJugador{
     position: absolute;
     bottom:32%;
-    left: 46%;
+    left: 44%;
     text-align: center;
     padding: 1rem;
 }
@@ -55,12 +55,12 @@ button{
 }
 
 .card{
-    height: 96px;
-    width: 60px;
+    height: 120px;
+    width: 85px;
     border: 2px solid black;
-    padding-top: 20px;
+    padding-top: 22px;
     border-radius: 10px;
-    font-size: 1.8rem;
+    font-size: 2.8rem;
     text-align: center;
     box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.5);
 }
@@ -80,7 +80,7 @@ button{
 .container{
     position: absolute;
     bottom: 0;
-    left: 16%;
+    left: 15%;
     text-align: center;
     padding: 1rem;
 

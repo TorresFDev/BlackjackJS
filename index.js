@@ -79,7 +79,12 @@ const pedirCartasJugador = () => {
     const valorMano = calcularValor(manoJugador);
     if(valorMano > 21){
         console.log("perdiste")
-        alert("Perdiste")
+        Toastify({
+            text: `Has Perdido`,
+            duration: 3000,
+            style:{
+            background: "linear-gradient(to right, #b4423a, #fcb045)",
+            }}).showToast();
     }
 }
 
@@ -87,8 +92,25 @@ const pedirCartasJugador = () => {
 const decidirGanador = async () =>{
     let croupierValor = await calcularValor(manoCroupier)
     let jugadorValor = await calcularValor(manoJugador)
-    alert(`La casa tiene ${croupierValor}, Jugador tiene ${jugadorValor}`)
-    croupierValor > jugadorValor? alert('La casa gana!'):  alert('El jugador gana')
+    Toastify({
+        text: (`La casa tiene ${croupierValor}, Jugador tiene ${jugadorValor}`),
+        duration: 3000,
+        style: {
+            background: "linear-gradient(to right, #ff0000, #4571fc)",
+          }
+        }).showToast();
+    croupierValor > jugadorValor? Toastify({
+        text: "La casa gana",
+        duration: 3000,
+        background: "linear-gradient(to right, #b4423a, #fcb045)",
+        }).showToast():
+        Toastify({
+        text: "El Jugador gana",
+        duration: 3000,
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+          }
+        }).showToast();
 }
 
 //dar vuelta la carta oculta
@@ -110,10 +132,24 @@ const cartasCroupier = async()=>{
         cartasCroupier();
     }
     else if (valorMano === 21){
-        alert('La casa gana con 21!!')
+        Toastify({
+        text: "La casa gana con 21!!",
+        duration: 3000,
+        style: {
+            background: "linear-gradient(to right, #b4423a, #fcb045)",
+          }
+        }).showToast();
+        
     }
     else if(valorMano > 21){
-        alert(`La casa pierde con`)
+        Toastify({
+            text: `La casa pierde con ${valorMano}`,
+            duration: 3000,
+            style: {
+                background: "linear-gradient(to right, #b4423a, #fcb045)",
+              }
+            }).showToast();
+        
     }
     else{
         decidirGanador();
