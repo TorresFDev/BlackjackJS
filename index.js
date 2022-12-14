@@ -100,7 +100,7 @@ const pedirCartasJugador = () => {
                 background: "linear-gradient(to right, #b4423a, #fcb045)"
             }
         }).showToast();
-        reiniciar()
+        setTimeout(reiniciar,3500);
     }
 };
 
@@ -122,7 +122,7 @@ const decidirGanador = async () => {
               style:{
                 background: "linear-gradient(to right, #b4423a, #fcb045)"
             }
-          }).showToast(reiniciar())
+          }).showToast(setTimeout(reiniciar,3500))
           
           
           :Toastify({
@@ -132,7 +132,7 @@ const decidirGanador = async () => {
                   background: "linear-gradient(to right, #00b09b, #96c93d)"
               }
           }).showToast();
-          reiniciar()
+          setTimeout(reiniciar,3500)
 };
 
 //dar vuelta la carta oculta
@@ -142,6 +142,7 @@ const cartasCroupier = async () => {
     cartaOculta.classList.remove("back");
     cartaOculta.innerHTML = manoCroupier[0];
     let valorMano = await calcularValor(manoCroupier);
+    
     if (valorMano < 16) {
         let nuevaCarta = seleccionarCarta();
         manoCroupier.push(nuevaCarta);
@@ -159,7 +160,7 @@ const cartasCroupier = async () => {
             style: {
                 background: "linear-gradient(to right, #b4423a, #fcb045)"
             }
-        }).showToast(reiniciar());
+        }).showToast(setTimeout(reiniciar,3500));
     } else if (valorMano > 21) {
         Toastify({
             text: `La casa pierde con ${valorMano}`,
@@ -167,7 +168,7 @@ const cartasCroupier = async () => {
             style: {
                 background: "linear-gradient(to right, #b4423a, #fcb045)"
             }
-        }).showToast(reiniciar());
+        }).showToast(setTimeout(reiniciar,3500));
     } else {
         decidirGanador();
     }
