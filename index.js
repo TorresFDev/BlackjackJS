@@ -162,6 +162,7 @@ const cartasCroupier = async () => {
             }
         }).showToast(setTimeout(reiniciar,3500));
     } else if (valorMano > 21) {
+        
         Toastify({
             text: `La casa pierde con ${valorMano}`,
             duration: 5000,
@@ -217,3 +218,79 @@ const reiniciar = () =>{
 
 }
 
+
+// document.getElementById("form").addEventListener("submit", (e) => {
+// e.preventDefault();})
+document.getElementById("form").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+const datosInicio = document.getElementById("datosInicio");
+const nombre = document.getElementById("nombre").value.toLowerCase();
+const apellido = document.getElementById("apellido").value.toLowerCase();
+const alias = document.getElementById("alias").value;
+const botonIniciar = document.getElementById("botonIniciar");
+
+
+if (
+     nombre.value ||
+     apellido.value ||
+     alias.value
+
+   ) {
+     Swal.fire({
+       position: "center",
+       icon: "success",
+       title: "Registro Completo",
+       showConfirmButton: false,
+       timer: 1500,
+    });
+    //divForm.remove();
+}
+const datosJugador ={
+    nombre,
+    apellido,
+    alias,
+}
+
+localStorage.setItem("datosJugador", JSON.stringify(datosJugador));
+datosInicio.remove()
+
+})
+
+
+const fichas = 1000
+const apuesta = 10
+
+const botonApuesta10 = document.getElementById("botonApuesta10");
+const botonApuesta20 = document.getElementById("botonApuesta20");
+const botonApuesta50 = document.getElementById("botonApuesta50");
+const botonApuesta100 = document.getElementById("botonApuesta100");
+
+const apuestaGeneral = (apuestaJugador) =>{
+    if (apuestaJugador > fichas){
+        Toastify({
+            text: "no tienes suficientes fichas",
+            duration: 3000,
+            style: {
+                background: "linear-gradient(to right, #b4423a, #fcb045)"
+            }
+        }).showToast();
+        return true;
+    }
+}
+apuesta = apuestaJugador;
+
+botonApuesta10.onclick = () => {
+    apuestaJugador
+
+}
+
+
+
+document.getElementById("message").innerHTML = "El Jugador Apuesta $" + apuesta;
+
+document.getElementById("message").innerHTML = "Jugador apuesta $" + apuesta;
+
+fichas -= apuesta;
+
+document.getElementById("Jugadorfichas").innerHTML = "$" + fichas;
