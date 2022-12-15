@@ -25,5 +25,5 @@ document.getElementById("form").addEventListener("submit", (e) => {
 
     localStorage.setItem("datosJugador", JSON.stringify(datosJugador));
     datosInicio.remove();
-    window.location.href = "./main.html";
+    window.location.href = "./BlackjackJS/main.html";
 });
