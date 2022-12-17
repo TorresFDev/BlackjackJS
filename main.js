@@ -100,7 +100,7 @@ const pedirCartasJugador = () => {
                 background: "linear-gradient(to right, #b4423a, #fcb045)"
             }
         }).showToast();
-        validarFichas(true);
+        validarFichas(false);
         setTimeout(reiniciar, 3500);
     }
 };
@@ -145,9 +145,9 @@ function validarFichas(ganaJugador) {
         apuesta = 0;
         actualizarValores();
         return;
-    }
+    }else{
     fichas -= apuesta;
-    apuesta = 0;
+    apuesta = 0;}
     actualizarValores();
 }
 
@@ -275,6 +275,7 @@ botonApuesta100.onclick = () => {
     apostar(100);
     actualizarValores();
 };
+
 
 function actualizarValores() {
     document.getElementById("playermoney").innerHTML = "$" + fichas;

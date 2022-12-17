@@ -15,7 +15,7 @@ document.getElementById("form").addEventListener("submit", (e) => {
             showConfirmButton: false,
             timer: 1500
         });
-        //divForm.remove();
+        
     }
     const datosJugador = {
         nombre,
