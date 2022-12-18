@@ -310,4 +310,3 @@ mostrarJuegos().then(juegos =>{
 })
 
 
-//https://trucogame.com/
