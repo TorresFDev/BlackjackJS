@@ -244,6 +244,8 @@ const botonApuesta20 = document.getElementById("botonApuesta20");
 const botonApuesta50 = document.getElementById("botonApuesta50");
 const botonApuesta100 = document.getElementById("botonApuesta100");
 
+
+//funcion para apostar
 function apostar(cuanto) {
     if (cuanto > fichas) {
         Toastify({
@@ -281,7 +283,24 @@ function actualizarValores() {
     document.getElementById("playermoney").innerHTML = "$" + fichas;
     document.getElementById("message").innerHTML =
         "El Jugador Apuesta $" + apuesta;
-    document.getElementById("message").innerHTML =
-        "Jugador apuesta $" + apuesta;
 }
+
 actualizarValores();
+
+
+const otrosJuegos = document.getElementById("otrosJuegos");
+
+
+const mostrarJuegos = async() =>{
+const response= await fetch('./json/juegos.json');
+const juegos = await response.json();
+return juegos;
+}
+
+mostrarJuegos().then(juegos =>{
+    otrosJuegos.innerHTML= juegos.forEach(juegos=>{
+        
+            juegos
+            
+        });
+})
