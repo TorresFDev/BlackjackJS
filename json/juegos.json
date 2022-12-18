@@ -3,16 +3,68 @@
         "id" : 1,
         "idCategoria" : 1,
         "nombreJuego": "Poker",
-        "cantidadJugadores": "2-8"
-        
-
+        "cantidadJugadores": "2-8",
+        "link" : "https://www.pokerstars.com/es-419/ "
 },
 {
     "id" : 2,
     "idCategoria" : 2,
     "nombreJuego": "Ajedrez",
-    "cantidadJugadores": "2"
-    
-
+    "cantidadJugadores": "2",
+    "link" : "https://www.chess.com/"
+},{
+    "id": 3,
+    "idCategoria":3,
+    "nombreJuego": "Truco",
+    "cantidadJugadores":"2-4",
+    "link" : "//https://trucogame.com/"
+},{
+    "id": 4,
+    "idCategoria":4,
+    "nombreJuego": "ChinChon",
+    "cantidadJugadores":"2-4",
+    "link" : "https://www.ludoteka.com/juegos/chinchon?jatorri=gp_txin&gclid=CjwKCAiAkfucBhBBEiwAFjbkrxZgyh9Kap1PakAA1pIRLhejYwCQvgrK-u0Wp0GagkFiQSXekn2DzxoCCDkQAvD_BwE"
+},{
+    "id": 7,
+    "idCategoria":7,
+    "nombreJuego": "Mahjongg",
+    "cantidadJugadores":"0-4",
+    "link" : "https://juegos.elpais.com/juegos/mahjongg-solitaire"
+},{
+    "id": 8,
+    "idCategoria":8,
+    "nombreJuego": "Domino",
+    "cantidadJugadores":"0-4",
+    "link" : "https://www.casualarena.com/es/domino"
+},{
+    "id": 9,
+    "idCategoria":9,
+    "nombreJuego": "Ruleta",
+    "cantidadJugadores":"Indefinido",
+    "link" : "https://ruleta77argentina.com/"
+},{
+    "id": 10,
+    "idCategoria":10,
+    "nombreJuego": "Traga Monedas",
+    "cantidadJugadores":"1",
+    "link" : "https://www.vegasslotsonline.com/es/gratis/"
+},{
+    "id": 11,
+    "idCategoria":11,
+    "nombreJuego": "Backgammon",
+    "cantidadJugadores":"1-2",
+    "link" : "https://www.abak.me/es/?utm_source=google&utm_medium=paid&utm_campaign=Espanol&gclid=CjwKCAiAkfucBhBBEiwAFjbkr-u896YCk_tc0rRLvrp9-wixPcHIgTDaLFtbd1GeQ6M-Ov-xZdf2vRoCajoQAvD_BwE/"
+},{
+    "id": 13,
+    "idCategoria":13,
+    "nombreJuego": "Scrabble",
+    "cantidadJugadores":"2-4",
+    "link" : "https://juegospot.com/scrabble-online-en-espanol/"
+},{
+    "id": 114,
+    "idCategoria":114,
+    "nombreJuego": "Damas",
+    "cantidadJugadores":"2",
+    "link" : "https://poki.com/es/damas?campaign=14344234719&adgroup=127057784638&extensionid=&targetid=dsa-1408254911669&location=9041036&matchtype=&network=g&device=c&devicemodel=&creative=604077471537&keyword=&placement=&target=&gclid=CjwKCAiAkfucBhBBEiwAFjbkr5KrcogykNKutt9SlNevi9sVz_b_ZWeE5SQG72xChHx-yXy1zRya1hoCCYoQAvD_BwE"
 }
 ]

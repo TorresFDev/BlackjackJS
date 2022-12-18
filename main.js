@@ -298,9 +298,16 @@ return juegos;
 }
 
 mostrarJuegos().then(juegos =>{
-    otrosJuegos.innerHTML= juegos.forEach(juegos=>{
+    juegos.forEach(juegos =>{
+        otrosJuegos.innerHTML +=`
         
-            juegos
-            
-        });
+        <div>
+        <a href="${juegos.link}" target="_blank" class= "linkJS">${juegos.nombreJuego}</a>
+        <p class="parrafoLink">Jugadores:${juegos.cantidadJugadores}</p>
+        </div>
+        `
+    })
 })
+
+
+//https://trucogame.com/

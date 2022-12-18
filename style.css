@@ -193,3 +193,17 @@ input:focus~.barra::before{
 .playermoney{
     font-size: 2rem;
 }
+
+.linkJS{
+    font-size: 1.3rem;
+    color: #f71810;
+    text-decoration: none
+}
+
+.parrafoLink{
+    color: aliceblue;
+}
+
+.textoLink{
+    color: #f71810;
+}
