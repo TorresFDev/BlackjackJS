@@ -281,8 +281,10 @@ botonApuesta100.onclick = () => {
 
 function actualizarValores() {
     document.getElementById("playermoney").innerHTML = "$" + fichas;
-    document.getElementById("message").innerHTML =
-        "El Jugador Apuesta $" + apuesta;
+    document.getElementById("message").innerHTML =`
+    <div class="mensajeApuesta">
+        <p>El Jugador Apuesta $  ${apuesta}</p>
+    </div>`
 }
 
 actualizarValores();

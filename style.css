@@ -197,7 +197,8 @@ input:focus~.barra::before{
 .linkJS{
     font-size: 1.3rem;
     color: #f71810;
-    text-decoration: none
+    text-decoration: none;
+    
 }
 
 .parrafoLink{
@@ -206,4 +207,10 @@ input:focus~.barra::before{
 
 .textoLink{
     color: #f71810;
+}
+
+.mensajeApuesta{
+    float: right;
+    margin-right: 2%;
+    font-size: 1.5rem;
 }
