@@ -52,6 +52,8 @@ const seleccionarCarta = () => {
     return cualquierCarta;
 };
 
+
+//llamada para mostrar las cartas del croupier y el  jugador
 const cartaModelo = document.createElement("div");
 cartaModelo.classList.add("card");
 const croupier = document.getElementById("croupier");
@@ -78,8 +80,11 @@ const manoBot = () => {
             nuevaCarta.setAttribute("data-red", true);
         jugador.append(nuevaCarta);
     });
+    
 };
 
+
+//llamada a los botones para pedir cartas y pasar
 const botonDame = document.getElementById("otra");
 const botonPasar = document.getElementById("pasar");
 const botonReiniciar = document.getElementById("reiniciar");
@@ -236,13 +241,15 @@ const reiniciar = () => {
 };
 
 
-let fichas = 1000;
+let fichas = 5000;
 let apuesta = 0;
 
 const botonApuesta10 = document.getElementById("botonApuesta10");
-const botonApuesta20 = document.getElementById("botonApuesta20");
 const botonApuesta50 = document.getElementById("botonApuesta50");
 const botonApuesta100 = document.getElementById("botonApuesta100");
+const botonApuesta500 = document.getElementById("botonApuesta500");
+const botonApuesta1000 = document.getElementById("botonApuesta1000");
+const botonApuestaTodo = document.getElementById("todo");
 
 
 //funcion para apostar
@@ -261,14 +268,6 @@ function apostar(cuanto) {
     }
 }
 
-botonApuesta10.onclick = () => {
-    apostar(10);
-    actualizarValores();
-};
-botonApuesta20.onclick = () => {
-    apostar(20);
-    actualizarValores();
-};
 botonApuesta50.onclick = () => {
     apostar(50);
     actualizarValores();
@@ -277,8 +276,20 @@ botonApuesta100.onclick = () => {
     apostar(100);
     actualizarValores();
 };
+botonApuesta500.onclick = () => {
+    apostar(500);
+    actualizarValores();
+};
+botonApuesta1000.onclick = () => {
+    apostar(1000);
+    actualizarValores();
+};
+botonApuestaTodo.onclick = () => {
+    apostar(fichas);
+    actualizarValores();
+};
 
-
+//actualiza valores del contador de la derecha
 function actualizarValores() {
     document.getElementById("playermoney").innerHTML = "$" + fichas;
     document.getElementById("message").innerHTML =`
@@ -292,7 +303,7 @@ actualizarValores();
 
 const otrosJuegos = document.getElementById("otrosJuegos");
 
-
+//fetch de juegos relacionados
 const mostrarJuegos = async() =>{
 const response= await fetch('./json/juegos.json');
 const juegos = await response.json();
