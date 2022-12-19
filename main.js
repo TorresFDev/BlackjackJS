@@ -247,7 +247,7 @@ const botonApuesta100 = document.getElementById("botonApuesta100");
 
 //funcion para apostar
 function apostar(cuanto) {
-    if (cuanto > fichas) {
+    if (apuesta >= fichas) {
         Toastify({
             text: "no tienes suficientes fichas",
             duration: 3000,
